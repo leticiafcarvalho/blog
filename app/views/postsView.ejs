@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Posts</title>
+</head>
+
+<body>
+	<h1>Rota Posts</h1>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Titulo</th>
+			<th>Conteudo</th>
+		</tr>
+		<% for(let i=0; i<post.length; i++) {%>
+		<tr>
+			<td>
+				<%= post[i].id %>
+			</td>
+			<td>
+				<%= post[i].titulo %>
+			</td>
+			<td>
+				<%= post[i].conteudo %>
+			</td>
+		</tr>	
+		<% } %>
+	</table>
+
+</body>
+
+</html>
