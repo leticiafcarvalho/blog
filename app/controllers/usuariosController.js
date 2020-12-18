@@ -1,14 +1,14 @@
 const dbConnection = require('../../config/dbConnection');
-const postsModel = require('../models/postsModel');
+const usuariosModel = require('../models/usuariosModel');
 
-module.exports.postsListar = function (app, req, res) {
+module.exports.usuariosListar = function (app, req, res) {
     const connection = dbConnection();
-    const postsModel = require('../models/postsModel');
-    postsModel.getposts(connection, function (err, results) {
+    const usuariosModel = require('../models/usuariosModel');
+    usuariosModel.getusuarios(connection, function (err, results) {
 
         if (!err) {
             console.log(results);
-            res.render('posts', { posts: results });
+            res.render('usuarios', { usuarios: results });
         } else {
             console.log("Erro:", err);
             let pagina = "<h1>Erro encontrado</h1><h2>" + err + "</h2>";
@@ -18,24 +18,24 @@ module.exports.postsListar = function (app, req, res) {
     });
 }
 
-module.exports.postsSalvar = function (app, req, res, errors) {
-    let posts = req.body;
+module.exports.usuariosSalvar = function (app, req, res, errors) {
+    let usuarios = req.body;
 
-    console.log(posts);
+    console.log(usuarios);
 
     if(!errors.isEmpty()){
         
         let erros = errors.array();
         console.log(erros);
-        res.render('./cadastroposts', {posts: posts, erros: erros});
+        res.render('./cadastrousuarios', {usuarios: usuarios, erros: erros});
         return;
     }
 
     const connection = dbConnection();
 
-    postsModel.setposts(posts, connection, function (err, result) {
+    usuariosModel.setusuarios(usuarios, connection, function (err, result) {
         if (!err) {
-            res.redirect('/posts');
+            res.redirect('/usuarios');
         } else {
             console.log("Erro: ", err);
             let pagina = "<h1> Erro encontrado </h1> <h2>" + err + "</h2>";
