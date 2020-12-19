@@ -1,12 +1,12 @@
 {
-  "name": "sitedsw",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "Site da disciplina dsw",
+  "description": "Blog voltado para posts de viagens",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Matheus D",
+  "author": "Leticia e Matheus",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

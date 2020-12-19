@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Cadastro do usuario</title>
+    </head>
+    
+	<body>
+		<h1>Cadastro do usuario</h1>
+		<section>
+			<% if(erros) { %>
+				<ul>
+					<% for(let i = 0; i < erros.length; i++){ %>
+						<li>
+							<%= erros[i].msg %>
+						</li>
+					<% } %>
+				</ul>
+			<% } %>
+		</section>
+		<form action="/usuario/salvar" method="post">
+			<input type="text" name="nome" placeholder="nome" value="<%= usuario.nome %>"><br />
+            <input type="email" name="email" placeholder="email" value="<%= usuario.email %>"><br />
+            <input type="date" name="datanascimento" placeholder="Data de nasimento" value="<%= usuario.datanascimento %>"><br />
+            <input type="password" name="senha" placeholder="Senha" value="<%= usuario.senha %>"><br />
+			<input type="submit" value="Salvar"><br />
+		</form>
+	</body>
+</html>

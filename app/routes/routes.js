@@ -30,9 +30,9 @@ module.exports = {
         })
     },
 
-    rotaInsereEstudante: function (app) {
-        app.get('/insereestudante', function (req, res) {
-            res.render('admin/insereEstudante', { estudante: {}, erros: {} });
+    rotaSalvarAluno: function (app) {
+        app.get('/usuario/salvar', function (req, res) {
+            res.render('admin/salvarusuario', { usuario: {}, erros: {} });
         })
     },
 
