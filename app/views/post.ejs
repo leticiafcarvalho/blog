@@ -1,33 +1,58 @@
-<!DOCTYPE html>	
-<html lang="pt-br">	
+<!DOCTYPE html>
+<html>
 
-<head>	
-	<title>Posts</title>	
-</head>	
+<head>
+	<title>Blog Viagens</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			background-color: #5f5757;
+		}
 
-<body>	
-	<h1>Rota Posts</h1>	
-	<table>	
-		<tr>	
-			<th>Id</th>	
-			<th>Titulo</th>	
-			<th>Conteudo</th>	
-		</tr>	
-		<% for(let i=0; i<post.length; i++) {%>	
-		<tr>	
-			<td>	
-				<%= post[i].id %>	
-			</td>	
-			<td>	
-				<%= post[i].titulo %>	
-			</td>	
-			<td>	
-				<%= post[i].conteudo %>	
-			</td>	
-		</tr>		
-		<% } %>	
-	</table>	
+		h1 {
+			text-align: center;
+			background-color: rgb(12, 180, 96);
+			color: white;
+		}
 
-</body>	
+		button {
+			background-color: #b9243d;
+			;
+		}
 
-</html> 
+		form {
+			margin-right: 30%;
+			margin-left: 30%;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Rota Posts</h1>
+
+	<% for(let i=0;i<posts.length;i++){ %>
+
+		<div class="col-md-10">
+			<h1>
+				<%= post[i].descricao %>
+			</h1>
+			<img src="http://www.kaczmarek-photo.com/wp-content/uploads/2012/06/guinnes-150x150.jpg" alt="post img"
+				class="pull-left img-responsive thumb margin10 img-thumbnail">
+
+			<article>
+				<p>
+					<%= post[i].descricao %>
+				</p>
+				<p>
+					<%= post[i].localicacao %>
+				</p>
+
+				<input type="text" name="comentario" size="40" /> 
+
+			</article>
+			<% } %>
+		</div>
+
+</body>
+
+</html>
