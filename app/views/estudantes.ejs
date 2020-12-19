@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Disciplina Desenvolvimento de Sistemas Web</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #5f5757;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: rgb(12, 180, 96);
+            color: white;
+        }
+
+        button {
+            background-color: #b9243d;
+            ;
+        }
+
+        form {
+            margin-right: 30%;
+            margin-left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rota Estudantes</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Nota</td>
+            <td>Cidade</td>
+            <td>Data de Nascimento</td>
+        </tr>
+        <% for(let i=0;i<estudantes.length;i++){ %>
+        <tr>
+            <td><%= estudantes[i].idestudante %></td>
+            <td><%= estudantes[i].nome %></td>
+            <td><%= estudantes[i].nota %></td>
+            <td><%= estudantes[i].cidade %></td>
+            <td><%= estudantes[i].datanascimento %></td>
+        </tr>
+        <% } %>
+    </table>
+
+</body>
+
+</html>
