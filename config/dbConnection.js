@@ -5,7 +5,7 @@ module.exports = function () {
         host: 'localhost',
         user: 'root',
         password: "250599",
-        database: 'dsw',
+        database: 'blog',
         port: '3306'
     });
 }

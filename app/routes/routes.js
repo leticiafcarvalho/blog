@@ -2,6 +2,7 @@ const dbConnection = require('../../config/dbConnection');
 const controllerEstudantes = require('../controllers/estudantesController');
 const controllerprofessores = require('../controllers/professoresController');
 const controllerconteudo = require('../controllers/conteudoController');
+const usuariocontroller = require('../controllers/usuarioController');
 const {check, validationResult} = require("express-validator");
 
 module.exports = {
@@ -30,10 +31,28 @@ module.exports = {
         })
     },
 
-    rotaSalvarAluno: function (app) {
-        app.get('/usuario/salvar', function (req, res) {
+    rotaListarUsuarios: function (app) {      
+        app.get('/usuarios', function (req, res) {
+            usuariocontroller.usuariosListar(app, req, res);
+        })
+    },
+
+    rotaUsuario: function (app) {
+        app.get('/usuario', function (req, res) {
             res.render('admin/salvarusuario', { usuario: {}, erros: {} });
         })
+    },
+
+    rotaUsuarioSalvar: function (app) {
+        app.post('/usuario/salvar', [
+            check('nome').isLength({min:1}).withMessage('O nome é obrigatório.'),
+            check('email').isEmail().withMessage('O e-mail é obrigatório.'),
+            check('datanascimento').isLength({min: 1}).withMessage('A data é obrigatoria.'),
+            check('senha').isLength({min: 1}).withMessage('A senha é obrigatória.')
+        ], function (req, res) {
+            const errors = validationResult(req);
+            usuariocontroller.usuariosSalvar(app, req, res, errors);
+        });
     },
 
     rotaEstudanteSalvar: function (app) {

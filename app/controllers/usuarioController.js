@@ -8,7 +8,7 @@ module.exports.usuariosListar = function (app, req, res) {
 
         if (!err) {	
             console.log(results);	
-            res.render('usuarios', { usuarios: results });	
+            res.render('usuarios', { usuario: results });	
         } else {	
             console.log("Erro:", err);	
             let pagina = "<h1>Erro encontrado</h1><h2>" + err + "</h2>";	
@@ -27,7 +27,7 @@ module.exports.usuariosSalvar = function (app, req, res, errors) {
 
         let erros = errors.array();	
         console.log(erros);	
-        res.render('./cadastrousuarios', {usuarios: usuarios, erros: erros});	
+        res.render('./home');	
         return;	
     }	
 

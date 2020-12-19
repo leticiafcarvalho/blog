@@ -28,18 +28,22 @@
 </head>
 
 <body>
-    <h1>Rota Conteudo</h1>
+    <h1>Rota Listar Usuarios</h1>
     <table>
         <tr>
             <td>ID</td>
-            <td>Conteudo</td>
-            <td>Data</td>
+            <td>Nome</td>
+            <td>Nivel</td>
+            <td>E-mail</td>
+            <td>Data de Nascimento</td>
         </tr>
-        <% for(let i=0;i<conteudo.length;i++){ %>
+        <% for(let i=0;i<usuario.length;i++){ %>
         <tr>
-            <td><%= conteudo[i].idconteudo %></td>
-            <td><%= conteudo[i].conteudo %></td>
-            <td><%= conteudo[i].dataconteudo %></td>
+            <td><%= usuario[i].idusuario %></td>
+            <td><%= usuario[i].nome %></td>
+            <td><%= usuario[i].nivel %></td>
+            <td><%= usuario[i].email %></td>
+            <td><%= usuario[i].datanascimento %></td>
         </tr>
         <% } %>
     </table>
