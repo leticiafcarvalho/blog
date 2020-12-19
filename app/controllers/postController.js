@@ -8,13 +8,12 @@ module.exports.postsListar = function (app, req, res) {
 
         if (!err) {	
             console.log(results);	
-            res.render('posts', { posts: results });	
+            res.render('post', { post: results });	
         } else {	
             console.log("Erro:", err);	
             let pagina = "<h1>Erro encontrado</h1><h2>" + err + "</h2>";	
             res.send(pagina);	
         }	
-
     });	
 }	
 
@@ -27,7 +26,7 @@ module.exports.postsSalvar = function (app, req, res, errors) {
 
         let erros = errors.array();	
         console.log(erros);	
-        res.render('./cadastroposts', {posts: posts, erros: erros});	
+        res.render('./posts', {post: posts, erros: erros});	
         return;	
     }	
 

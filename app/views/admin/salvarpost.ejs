@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Criar post</title>
+    </head>
+    
+	<body>
+		<h1>Criar post</h1>
+		<section>
+			<% if(erros) { %>
+				<ul>
+					<% for(let i = 0; i < erros.length; i++){ %>
+						<li>
+							<%= erros[i].msg %>
+						</li>
+					<% } %>
+				</ul>
+			<% } %>
+		</section>
+		<form action="/post/salvar" method="post">
+			<input type="text" name="titulo" placeholder="Titulo" value="<%= post.titulo %>"><br />
+            <input type="text" name="descricao" placeholder="Descrição" value="<%= post.descricao %>"><br />
+            <input type="text" name="localizacao" placeholder="Localização" value="<%= post.localizacao %>"><br />
+			<input type="number" name="idusuario" placeholder="Id usuário" value="<%= post.idusuario %>"><br />
+			<input type="number" name="idstatuspost" placeholder="Id status post" value="<%= post.idstatuspost %>"><br />
+			<input type="submit" value="Salvar"><br />
+		</form>
+	</body>
+</html>
