@@ -46,6 +46,12 @@ module.exports = {
         })
     },
 
+    rotaListarPostsPorIdUsuario: function (app) {
+        app.get('/posts/:idUsuario', function (req, res) {
+            controllerposts.postsListarPorIdUsuario(app, req, res, req.params.idUsuario);
+        });
+    },
+
     rotaPostSalvar: function (app) {
         app.post('/post/salvar', [
             check('titulo').isLength({min:1}).withMessage('É obrigatório o preenchimento do campo titulo.'),

@@ -42,3 +42,19 @@ module.exports.postsSalvar = function (app, req, res, errors) {
         }	
     });	
 }
+
+module.exports.postsListarPorIdUsuario = function (app, req, res, idUsuario) {	
+    const connection = dbConnection();	
+
+    postsModel.getpostsporusuario(idUsuario, connection, function (err, results) {	
+
+        if (!err) {	
+            console.log(results);	
+            res.render('post', { post: results });	
+        } else {	
+            console.log("Erro:", err);	
+            let pagina = "<h1>Erro encontrado</h1><h2>" + err + "</h2>";	
+            res.send(pagina);	
+        }	
+    });	
+}	
