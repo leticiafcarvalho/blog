@@ -7,8 +7,7 @@ module.exports.usuariosListar = function (app, req, res) {
     usuariosModel.getusuario(connection, function (err, results) {	
 
         if (!err) {	
-            console.log(results);	
-            res.render('usuarios', { usuario: results });	
+            res.json(results);	
         } else {	
             console.log("Erro:", err);	
             let pagina = "<h1>Erro encontrado</h1><h2>" + err + "</h2>";	

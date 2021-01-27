@@ -4,21 +4,9 @@ const {check, validationResult} = require("express-validator");
 
 module.exports = {
 
-    rotaHome: function (app) {
-        app.get('/', function (req, res) {
-            res.render('home');
-        })
-    },
-
     rotaListarUsuarios: function (app) {      
         app.get('/usuarios', function (req, res) {
             usuariocontroller.usuariosListar(app, req, res);
-        })
-    },
-
-    rotaUsuario: function (app) {
-        app.get('/usuario', function (req, res) {
-            res.render('admin/salvarusuario', { usuario: {}, erros: {} });
         })
     },
 
@@ -38,12 +26,6 @@ module.exports = {
         app.get('/posts', function (req, res) {
             controllerposts.postsListar(app, req, res);
         });
-    },
-
-    rotaPosts: function (app) {
-        app.get('/post', function (req, res) {
-            res.render('admin/salvarpost', { post: {}, erros: {} });
-        })
     },
 
     rotaListarPostsPorIdUsuario: function (app) {

@@ -8,7 +8,7 @@ module.exports.postsListar = function (app, req, res) {
 
         if (!err) {	
             console.log(results);	
-            res.render('post', { post: results });	
+            res.send(results);	
         } else {	
             console.log("Erro:", err);	
             let pagina = "<h1>Erro encontrado</h1><h2>" + err + "</h2>";	
@@ -50,7 +50,7 @@ module.exports.postsListarPorIdUsuario = function (app, req, res, idUsuario) {
 
         if (!err) {	
             console.log(results);	
-            res.render('post', { post: results });	
+            res.send(results);	
         } else {	
             console.log("Erro:", err);	
             let pagina = "<h1>Erro encontrado</h1><h2>" + err + "</h2>";	
