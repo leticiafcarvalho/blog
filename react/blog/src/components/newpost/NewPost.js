@@ -1,10 +1,12 @@
 import React from 'react';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './newpost.css';
 
 const NewPost = ({ onPostSubmit }) => {
     return (
         <div class="form-group container-fluid">
-            <h1>Cadastro de novo Post</h1>
+            <br/>
+            <h1 class="text-primary">Cadastro de novo Post</h1>
             <form onSubmit={onPostSubmit}>
                 <div class="row col-md-12">
                     <div class="form-group col-md-12">

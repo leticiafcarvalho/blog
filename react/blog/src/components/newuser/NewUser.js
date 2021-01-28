@@ -5,7 +5,8 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 const NewUser = ({ onUserSubmit }) => {
     return (
         <div class="form-group container-fluid">
-            <h1>Cadastro de novo Usuário</h1>
+            <br/>
+            <h1 class="text-primary">Cadastro de novo Usuário</h1>
             <form onSubmit={onUserSubmit}>
                 <div class="row col-md-12">
                     <div class="form-group col-md-12">
