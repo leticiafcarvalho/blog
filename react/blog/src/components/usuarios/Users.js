@@ -5,6 +5,7 @@ const Users = ({ users }) => {
 
     return (
         <div>
+            <h1 class="text-primary">Usários</h1>
             {
                 users?.map((user, index) => {
                     return (
