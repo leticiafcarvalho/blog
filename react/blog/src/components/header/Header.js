@@ -7,6 +7,7 @@ const Header = () => {
         <header className="Header">
             <nav class="navbar navbar-light bg-primary">
                 <ul>
+                <li><NavLink to="/login" exact>Login</NavLink></li>
                     <li><NavLink to="/usuarios" exact>Users</NavLink></li>
                     <li><NavLink to="/usuarios/salvar" exact>Novo usuario</NavLink></li>
                     <li><NavLink to="/posts" exact>Posts</NavLink></li>
