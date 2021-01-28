@@ -29,29 +29,13 @@ function App() {
     ]
   );
 
-  const [users, setUsers] = useState(
-    [
-      {
-        idusuario: 9,
-        nome: "Matheus Davy",
-        nivel: 0,
-        email: "matheusdavy@gmail.com",
-        senha: "123456",
-        datanascimento: "2021-01-15T03:00:00.000Z",
-        idstatus: 1,
-        idstatusconta: 1
-      }
-    ]
-  );
+  const [users, setUsers] = useState();
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/usuarios')
-      .then((response) => {
-        setUsers(response.data);
-      })
-      .catch((err) => {
-        console.log("Erro: ", err)
-      })
+  useEffect(async () => {
+    const response = await axios.get('http://localhost:3000/usuarios')
+      .catch(err => console.log("Erro: ", err))
+
+    setUsers(response.data);
   }, [])
 
   const [showBooks, setShowBooks] = useState(true);
@@ -64,7 +48,7 @@ function App() {
   const onBookSubmit = (event) => {
     event.preventDefault();
 
-    let newBooks = [...books,
+    const newBooks = [...books,
     {
       id: books.length + 1,
       name: event.target.name.value,
@@ -113,7 +97,7 @@ function App() {
       <div className="App">
 
         <Header />
-        <h1>Livros</h1>
+
         <Switch>
 
           <Redirect from="/" to="/livros" exact />
@@ -135,7 +119,7 @@ function App() {
           </Route>
 
           <Route path="/livros/:id" exact>
-            <FullBook books={books}/>
+            <FullBook books={books} />
           </Route>
 
           <Route render={() => <div> Página não encontrada </div>} />
