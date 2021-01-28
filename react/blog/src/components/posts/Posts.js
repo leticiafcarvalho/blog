@@ -1,5 +1,6 @@
 import React from 'react';
 import Post from '../post/Post'
+import 'bootstrap/dist/css/bootstrap.css';
 
 const Posts = ({ posts }) => {
 
