@@ -36,7 +36,7 @@ module.exports = {
 
     rotaDeletarPostsPorId: function (app) {
         app.get('/posts/:idPost', function (req, res) {
-            controllerposts.postsExcluirPorId(app, req, res, req.params.idUsuario);
+            controllerposts.postsExcluirPorId(app, req, res, req.params.idPost);
         });
     },
 
