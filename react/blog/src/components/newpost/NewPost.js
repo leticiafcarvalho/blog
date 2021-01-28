@@ -51,6 +51,7 @@ const NewPost = ({ onPostSubmit }) => {
                         <input type="submit" class="btn btn-primary" value="Cadastrar" />
                     </div>
                 </div>
+                <br/>
             </form>
         </div>
     );
