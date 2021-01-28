@@ -34,6 +34,12 @@ module.exports = {
         });
     },
 
+    rotaDeletarPostsPorId: function (app) {
+        app.get('/posts/:idPost', function (req, res) {
+            controllerposts.postsDeletarPorId(app, req, res, req.params.idUsuario);
+        });
+    },
+
     rotaPostSalvar: function (app) {
         app.post('/post/salvar', [
             check('titulo').isLength({min:1}).withMessage('É obrigatório o preenchimento do campo titulo.'),

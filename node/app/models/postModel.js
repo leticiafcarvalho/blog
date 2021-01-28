@@ -12,6 +12,12 @@ module.exports = {
     getpostsporusuario: function(idUsuario, connection, callback){
         let sql = 'select * from blog.post where idusuario = ?';
         connection.query(sql, idUsuario, callback);
+    },
+
+    deletePorId: function(idPost, connection, callback){
+        let sql = 'delete from blog.post where idpost = ?';
+        connection.query(sql, idPost, callback);
     }
+    
 
 } 
