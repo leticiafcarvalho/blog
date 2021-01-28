@@ -7,6 +7,8 @@ import Usuarios from './components/usuarios/Users';
 import NewUser from './components/newuser/NewUser';
 import NewPost from './components/newpost/NewPost';
 import Login from './components/login/Login';
+import FullPost from './components/fullpost/FullPost';
+
 
 const Routes = () => {
 
@@ -88,6 +90,10 @@ const Routes = () => {
 
             <Route path="/login" exact>
             <Login/>
+          </Route>
+
+          <Route path="/posts/:idpost" exact>
+            <FullPost/>
           </Route>
 
             <Route render={() => <div> Página não encontrada </div>} />
