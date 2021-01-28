@@ -1,9 +1,9 @@
 import React from 'react';
-import '../book/Book.css';
+import '../defaultcss/default.css';
 
 const User = (props) => {
   return (
-    <div className="Book">
+    <div className="Default">
       <p>{props.nome}</p>
       <p>{props.email}</p>
       <p>{props.datanascimento}</p>

@@ -2,34 +2,14 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+
 import Posts from './components/posts/Posts';
-import Books from './components/books/Books';
 import Usuarios from './components/usuarios/Users';
-import NewBook from './components/newbook/NewBook';
 import NewUser from './components/newuser/NewUser';
 import NewPost from './components/newpost/NewPost';
-import AlterBook from './components/alterbook/AlterBook';
 import Header from './components/header/Header';
-import FullBook from './components/fullbook/FullBook';
 
 function App() {
-
-  const [books, setBooks] = useState(
-    [
-      {
-        id: 1,
-        name: "Naruto",
-        author: "Masashi",
-        pages: "50"
-      },
-      {
-        id: 2,
-        name: "One piece",
-        author: "Oda",
-        pages: "50"
-      }
-    ]
-  );
 
   const [users, setUsers] = useState();
 
@@ -49,27 +29,6 @@ function App() {
     setPosts(response.data);
   }, [])
 
-
-  const [showBooks, setShowBooks] = useState(true);
-
-  const [style, setStyle] = useState({
-    backgroundColor: 'green',
-    color: 'white'
-  })
-
-  const onBookSubmit = (event) => {
-    event.preventDefault();
-
-    const newBooks = [...books,
-    {
-      id: books.length + 1,
-      name: event.target.name.value,
-      author: event.target.author.value,
-      pages: event.target.pages.value
-    }];
-
-    setBooks(newBooks);
-  }
 
   const onUserSubmit = (userInfo) => {
     userInfo.preventDefault();
@@ -107,38 +66,6 @@ function App() {
     })
   }
 
-  const alterBookSubmit = (event) => {
-    event.preventDefault();
-
-    let booksList = books.slice();
-    const book = booksList.find(element => element.name === event.target.name.value);
-
-    book.name = event.target.name.value;
-    book.author = event.target.author.value;
-    book.pages = event.target.pages.value;
-
-    onTooogleBooks();
-  }
-
-  const onTooogleBooks = () => {
-    setShowBooks(!showBooks);
-    let newStyle = { ...style };
-    if (style.backgroundColor === 'green') {
-      newStyle.backgroundColor = 'red';
-    } else {
-      newStyle.backgroundColor = 'green';
-    }
-    setStyle(newStyle);
-  }
-
-  const deleteBookHandle = (index) => {
-
-    let newBooks = books.slice();
-    newBooks.splice(index, 1);
-    setBooks(newBooks);
-  }
-
-
   return (
     <BrowserRouter>
 
@@ -149,10 +76,6 @@ function App() {
         <Switch>
 
           <Redirect from="/" to="/usuarios" exact />
-
-          <Route path="/livros" exact>
-            <Books books={books} deleteBookHandle={deleteBookHandle} />
-          </Route>
 
           <Route path="/usuarios" exact>
             <Usuarios users={users} />
@@ -167,20 +90,7 @@ function App() {
           </Route>
 
           <Route path="/posts/salvar" exact>
-            <NewPost onPostSubmit={onPostSubmit} />
-            
-          </Route>
-
-          <Route path="/livros/novolivro" exact>
-            <NewBook onBookSubmit={onBookSubmit} />
-          </Route>
-
-          <Route path="/livros/alterarlivro" exact>
-            <AlterBook alterBookSubmit={alterBookSubmit} />
-          </Route>
-
-          <Route path="/livros/:id" exact>
-            <FullBook books={books} />
+            <NewPost onPostSubmit={onPostSubmit} /> 
           </Route>
 
           <Route render={() => <div> Página não encontrada </div>} />
