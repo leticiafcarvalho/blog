@@ -2,11 +2,12 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-
+import Posts from './components/posts/Posts';
 import Books from './components/books/Books';
 import Usuarios from './components/usuarios/Users';
 import NewBook from './components/newbook/NewBook';
 import NewUser from './components/newuser/NewUser';
+import NewPost from './components/newpost/NewPost';
 import AlterBook from './components/alterbook/AlterBook';
 import Header from './components/header/Header';
 import FullBook from './components/fullbook/FullBook';
@@ -37,7 +38,17 @@ function App() {
       .catch(err => console.log("Erro: ", err))
 
     setUsers(response.data);
+  }, []);
+
+  const [posts, setPosts] = useState();
+
+  useEffect(async () => {
+    const response = await axios.get('http://localhost:3000/posts')
+      .catch(err => console.log("Erro: ", err))
+
+    setPosts(response.data);
   }, [])
+
 
   const [showBooks, setShowBooks] = useState(true);
 
@@ -70,6 +81,24 @@ function App() {
     }
 
     axios.post('http://localhost:3000/usuario/salvar', newUser)
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log("Erro: ", err);
+    })
+  }
+
+  const onPostSubmit = (postInfo) => {
+    postInfo.preventDefault();
+    const newPost = {
+      titulo: postInfo.target.titulo.value,
+      descricao: postInfo.target.descricao.value,
+      localizacao: postInfo.target.localizacao.value,
+      idusuario: postInfo.target.idusuario.value,
+    }
+
+    axios.post('http://localhost:3000/post/salvar', newPost)
     .then(response => {
       console.log(response)
     })
@@ -131,6 +160,15 @@ function App() {
 
           <Route path="/usuarios/salvar" exact>
             <NewUser onUserSubmit={onUserSubmit} />
+          </Route>
+
+          <Route path="/posts" exact>
+            <Posts posts={posts} />
+          </Route>
+
+          <Route path="/posts/salvar" exact>
+            <NewPost onPostSubmit={onPostSubmit} />
+            
           </Route>
 
           <Route path="/livros/novolivro" exact>

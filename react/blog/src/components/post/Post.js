@@ -1,9 +1,9 @@
 import React from 'react';
-import '../post/Post.css';
+import '../book/Book.css';
 
 const Post = (props) => {
   return (
-    <div className="Post">
+    <div className="Book">
         <p>{props.titulo}</p>
         <p>{props.descricao}</p>
         <p>{props.localizacao}</p>
