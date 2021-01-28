@@ -5,7 +5,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 const NewUser = ({ onUserSubmit }) => {
     return (
         <div class="form-group container-fluid">
-            <br />
+            <br/>
             <h1 class="text-primary">Cadastro de novo Usuário</h1>
             <form onSubmit={onUserSubmit}>
                 <div class="row col-md-12">
@@ -45,7 +45,7 @@ const NewUser = ({ onUserSubmit }) => {
                 <div>
                     <br />
                 </div>
-                <input type="submit" class="btn btn-primary" value="Cadastrar" />
+                <input type="submit"  class="btn btn-primary" value="Cadastrar" />
             </form>
         </div>
     );

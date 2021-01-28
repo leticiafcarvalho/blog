@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 
 import Posts from './components/posts/Posts';
 import Usuarios from './components/usuarios/Users';
 import NewUser from './components/newuser/NewUser';
 import NewPost from './components/newpost/NewPost';
-import axios from 'axios';
+import Login from './components/login/Login';
 
 const Routes = () => {
 
@@ -84,6 +85,10 @@ const Routes = () => {
             <Route path="/posts/salvar" exact>
                 <NewPost onPostSubmit={onPostSubmit} />
             </Route>
+
+            <Route path="/login" exact>
+            <Login/>
+          </Route>
 
             <Route render={() => <div> Página não encontrada </div>} />
 
