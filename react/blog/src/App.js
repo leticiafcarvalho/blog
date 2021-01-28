@@ -6,6 +6,7 @@ import './App.css';
 import Books from './components/books/Books';
 import Usuarios from './components/usuarios/Users';
 import NewBook from './components/newbook/NewBook';
+import NewUser from './components/newuser/NewUser';
 import AlterBook from './components/alterbook/AlterBook';
 import Header from './components/header/Header';
 import FullBook from './components/fullbook/FullBook';
@@ -59,6 +60,24 @@ function App() {
     setBooks(newBooks);
   }
 
+  const onUserSubmit = (userInfo) => {
+    userInfo.preventDefault();
+    const newUser = {
+      nome: userInfo.target.nome.value,
+      email: userInfo.target.email.value,
+      senha: userInfo.target.senha.value,
+      datanascimento: userInfo.target.datanascimento.value
+    }
+
+    axios.post('http://localhost:3000/usuario/salvar', newUser)
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log("Erro: ", err);
+    })
+  }
+
   const alterBookSubmit = (event) => {
     event.preventDefault();
 
@@ -108,6 +127,11 @@ function App() {
 
           <Route path="/usuarios" exact>
             <Usuarios users={users} />
+          </Route>
+
+          <Route path="/usuarios/salvar" exact>
+            <NewUser onUserSubmit={onUserSubmit} />
+            
           </Route>
 
           <Route path="/livros/novolivro" exact>
