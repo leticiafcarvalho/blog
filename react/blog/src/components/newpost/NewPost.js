@@ -1,13 +1,14 @@
 import React from 'react';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 const NewPost = ({onPostSubmit}) => {
     return (
-        <div>
+        <div class="form-group">
             <form onSubmit={onPostSubmit}>
-                <input type="text" id="titulo" placeholder="Digite um titulo" />
-                <input type="text" id="descricao" placeholder="Descrição" />
-                <input type="text" id="localizacao" placeholder="Localização" />
-                <input type="text" id="idusuario" placeholder="Id do usuario" />
+                <input type="text" class="form-control" id="titulo" placeholder="Digite um titulo" />
+                <input type="text" class="form-control" id="descricao" placeholder="Descrição" />
+                <input type="text" class="form-control" id="localizacao" placeholder="Localização" />
+                <input type="text" class="form-control" id="idusuario" placeholder="Id do usuario" />
                 <input type="submit" value="Cadastrar" />
             </form>
         </div>
