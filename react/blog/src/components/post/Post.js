@@ -8,7 +8,7 @@ const Post = (props) => {
         <p>Título: {props.titulo}</p>
         <p>Drscrição: {props.descricao}</p>
         <p>Localização: {props.localizacao}</p>
-        <button onClick={props.click}>Apagar post</button>
+        <button class="btn btn-danger" onClick={props.click}>Apagar post</button>
     </div>
   );
 }
