@@ -6,3 +6,4 @@ rotas.rotaUsuarioSalvar(app);
 rotas.rotaListarPosts(app);
 rotas.rotaPostSalvar(app);
 rotas.rotaListarPostsPorIdUsuario(app);
+rotas.rotaDeletarPostsPorId(app);
