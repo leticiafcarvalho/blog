@@ -7,7 +7,7 @@ class Chamada extends PureComponent {
       <section className="block block-gradient">
         <div className="wrapper">
           <p>Não possui cadastro? Entre aqui.</p>
-          <Link to="/cadastrar">
+          <Link to="/usuarios/salvar">
             <button className="btn-default btn-dark">Criar conta</button>
           </Link>
         </div>
