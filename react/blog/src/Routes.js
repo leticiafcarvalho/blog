@@ -67,6 +67,13 @@ const Routes = () => {
             })
     }
 
+    const deletePostHandler = (index) => {
+        let newPosts = posts.slice(); //ou ..= [...books]
+        newPosts.splice(index, 1);
+        setPosts(newPosts);
+        // console.log(books);
+      }
+
     return (
         <Switch>
 
@@ -81,7 +88,7 @@ const Routes = () => {
             </Route>
 
             <Route path="/posts" exact>
-                <Posts posts={posts} />
+                <Posts posts={posts} deletePostHandler={deletePostHandler} />
             </Route>
 
             <Route path="/posts/salvar" exact>

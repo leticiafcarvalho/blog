@@ -3,7 +3,7 @@ import Post from '../post/Post';
 import { Link } from 'react-router-dom';
 
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts, deletePostHandler }) => {
 
     return (
         <div>
@@ -26,7 +26,7 @@ const Posts = ({ posts }) => {
                                 descricao={post.descricao}
                                 localizacao={post.localizacao}
                                 idpost={post.idpost}
-                                key={index}
+                                deletePostHandler={deletePostHandler}
                             />
                         </Link>
                     );
