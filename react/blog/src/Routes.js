@@ -77,7 +77,7 @@ const Routes = () => {
     return (
         <Switch>
 
-            <Redirect from="/" to="/usuarios" exact />
+            <Redirect from="/" to="/login" exact />
 
             <Route path="/usuarios" exact>
                 <Usuarios users={users} />
