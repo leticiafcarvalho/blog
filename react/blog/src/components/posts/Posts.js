@@ -4,7 +4,8 @@ import Post from '../post/Post'
 const Posts = ({ posts }) => {
 
     return (
-        <div>
+        <div> 
+            <h1 class="text-primary">Posts</h1>
             {
                 posts?.map((post, index) => {
                     return (

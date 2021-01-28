@@ -6,8 +6,6 @@ class Login extends PureComponent {
   render() {
     return (
       <Fragment>
-
-
         <div class="form-group container-fluid">
           <h1 class="text-primary">Login</h1>
           <form>

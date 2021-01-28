@@ -4,9 +4,9 @@ import '../defaultcss/default.css';
 const Post = (props) => {
   return (
     <div className="Default">
-        <p>{props.titulo}</p>
-        <p>{props.descricao}</p>
-        <p>{props.localizacao}</p>
+        <p>Título: {props.titulo}</p>
+        <p>Drscrição: {props.descricao}</p>
+        <p>Localização: {props.localizacao}</p>
     </div>
   );
 }
