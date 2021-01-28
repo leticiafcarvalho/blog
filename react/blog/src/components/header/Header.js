@@ -12,6 +12,8 @@ const Header = () => {
                     <li><NavLink to="/livros/alterarlivro" exact>Alterar</NavLink></li>
                     <li><NavLink to="/usuarios" exact>Users</NavLink></li>
                     <li><NavLink to="/usuarios/salvar" exact>Novo usuario</NavLink></li>
+                    <li><NavLink to="/posts" exact>Posts</NavLink></li>
+                    <li><NavLink to="/posts/salvar" exact>Novo Post</NavLink></li>
                 </ul>
             </nav>
         </header>
