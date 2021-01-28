@@ -8,6 +8,7 @@ import Usuarios from './components/usuarios/Users';
 import NewUser from './components/newuser/NewUser';
 import NewPost from './components/newpost/NewPost';
 import Header from './components/header/Header';
+import Login from './components/login/Login';
 
 function App() {
 
@@ -76,6 +77,10 @@ function App() {
         <Switch>
 
           <Redirect from="/" to="/usuarios" exact />
+
+          <Route path="/login" exact>
+            <Login/>
+          </Route>
 
           <Route path="/usuarios" exact>
             <Usuarios users={users} />
