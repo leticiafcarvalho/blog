@@ -6,41 +6,50 @@ const NewPost = ({ onPostSubmit }) => {
         <div class="form-group container-fluid">
             <h1>Cadastro de novo Post</h1>
             <form onSubmit={onPostSubmit}>
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Título</span>
+                <div class="row col-md-12">
+                    <div class="form-group col-md-12">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Título</span>
+                            </div>
+                            <input type="text" class="form-control" id="titulo" placeholder="Exemplo: Minha primeira Viagem" />
                         </div>
-                        <input type="text" class="form-control" id="titulo" placeholder="Exemplo: Minha primeira Viagem" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Descrição</span>
+                <div class="row col-md-12">
+                    <div class="form-group col-md-12">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Descrição</span>
+                            </div>
+                            <textarea class="form-control" id="descricao" />
                         </div>
-                        <textarea class="form-control" id="descricao" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="input-group">
+                <div class="row col-md-12">
+                    <div class="input-group col-md-6">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Localização</span>
                         </div>
                         <input type="text" class="form-control" id="localizacao" placeholder="Ex: Campinas, SP - Brasil" />
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
+
+                    <div class="input-group col-md-6">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Id Usuário</span>
                         </div>
                         <input type="text" class="form-control" id="idusuario" placeholder="Ex: 9" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Cadastrar" />
+                <div>
+                    <br/>
                 </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <input type="submit" class="btn btn-primary" value="Cadastrar" />
+                    </div>
+                </div>
+
 
             </form>
         </div>
