@@ -4,11 +4,11 @@ import '../defaultcss/default.css';
 const Post = (props) => {
   return (
     <div className="Default">
-      <br/>
-        <p>Título: {props.titulo}</p>
-        <p>Descrição: {props.descricao}</p>
-        <p>Localização: {props.localizacao}</p>
-        <button class="btn btn-danger" onClick={props.click}>Apagar post</button>
+        <p>{props.titulo}</p>
+        <p>{props.descricao}</p>
+        <p>{props.localizacao}</p>
+        <button onClick={props.click}>Apagar livro</button>
+
     </div>
   );
 }
