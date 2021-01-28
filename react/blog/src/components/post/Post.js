@@ -7,7 +7,7 @@ const Post = (props) => {
         <p>{props.titulo}</p>
         <p>{props.descricao}</p>
         <p>{props.localizacao}</p>
-        <button onClick={props.click}>Apagar livro</button>
+        <button onClick={props.click}>Apagar post</button>
 
     </div>
   );
