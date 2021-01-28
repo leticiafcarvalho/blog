@@ -119,7 +119,7 @@ function App() {
 
         <Switch>
 
-          <Redirect from="/" to="/livros" exact />
+          <Redirect from="/" to="/usuarios" exact />
 
           <Route path="/livros" exact>
             <Books books={books} deleteBookHandle={deleteBookHandle} />
@@ -131,7 +131,6 @@ function App() {
 
           <Route path="/usuarios/salvar" exact>
             <NewUser onUserSubmit={onUserSubmit} />
-            
           </Route>
 
           <Route path="/livros/novolivro" exact>

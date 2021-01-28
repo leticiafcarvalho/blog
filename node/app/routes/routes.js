@@ -38,7 +38,6 @@ module.exports = {
         app.post('/post/salvar', [
             check('titulo').isLength({min:1}).withMessage('É obrigatório o preenchimento do campo titulo.'),
             check('descricao').isLength({min: 1}).withMessage('É obrigatório o preenchimento do campodescrição.'),
-
         ], function (req, res) {
             const errors = validationResult(req, res);
                 controllerposts.postsSalvar(app, req, res, errors);

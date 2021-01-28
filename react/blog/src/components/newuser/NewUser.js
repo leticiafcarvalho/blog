@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewBook = ({onUserSubmit}) => {
+const NewUser = ({onUserSubmit}) => {
     return (
         <div>
             <form onSubmit={onUserSubmit}>
@@ -14,4 +14,4 @@ const NewBook = ({onUserSubmit}) => {
     );
 };
 
-export default NewBook;
+export default NewUser;
