@@ -59,7 +59,7 @@ module.exports.postsListarPorIdUsuario = function (app, req, res, idUsuario) {
     });	
 }	
 
-module.exports.postsExcluirPorId = function (app, req, res, idUsuario) {	
+module.exports.postsExcluirPorId = function (app, req, res, idPost) {	
     const connection = dbConnection();	
 
     postsModel.deletePorId(idPost, connection, function (err, results) {	
