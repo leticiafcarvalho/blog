@@ -1,13 +1,49 @@
 import React from 'react';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-const NewUser = ({onUserSubmit}) => {
+
+const NewUser = ({ onUserSubmit }) => {
     return (
-        <div>
+        <div class="form-group container-fluid">
+            <h1>Cadastro de novo Usuário</h1>
             <form onSubmit={onUserSubmit}>
-                <input type="text" id="nome" placeholder="Digite seu nome" />
-                <input type="text" id="email" placeholder="Digite seu e-mail" />
-                <input type="date" id="datanascimento" placeholder="Data de nascimento" />
-                <input type="password" id="senha" placeholder="Digite uma senha" />
+                <div class="row col-md-12">
+                    <div class="form-group col-md-12">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nome</span>
+                            </div>
+                            <input type="text" id="nome" placeholder="Digite seu nome" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-md-12">
+                    <div class="form-group col-md-12">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">E-mail</span>
+                            </div>
+                            <input type="text" id="email" placeholder="exemplo@teste.com" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-md-12">
+                    <div class="input-group col-md-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Data de Nascimento</span>
+                        </div>
+                        <input type="date" id="datanascimento" placeholder="25/11/2005" />
+                        </div>
+                <div class="input-group col-md-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Senha</span>
+                        </div>
+                        <input type="password" id="senha" placeholder="Digite uma senha" />
+                        </div>
+                </div>
+                <div>
+                    <br/>
+                </div>
                 <input type="submit" value="Cadastrar" />
             </form>
         </div>
